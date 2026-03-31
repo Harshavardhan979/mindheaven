@@ -1,16 +1,61 @@
-# React + Vite
+# Online Mental Health Support & Therapy Web Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the Online Mental Health platform repository! 
+This project is an end-to-end full-stack web application designed for mental well-being, connecting patients with licensed therapists through a premium, modern dashboard environment.
 
-Currently, two official plugins are available:
+## Tech Stack
+- **Frontend**: React (Vite), React Router, Axios, Vanilla CSS (Glassmorphism layout)
+- **Backend**: Python (Django), Django REST Framework, Simple JWT Authentication
+- **Database**: SQLite (default Django DB)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🚀 How to Run the Project Locally
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The project uses a decoupled architecture, so the **Backend API** and the **Frontend Client** need to be run separately. Open two terminal instances to run them simultaneously:
 
-## Expanding the ESLint configuration
+### 1. Start the Django Backend
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Navigate to the `backend` directory:
+   ```bash
+   cd backend
+   ```
+2. Activate the virtual environment:
+   ```bash
+   # On Windows
+   .\venv\Scripts\activate
+   
+   # On Mac/Linux
+   source venv/bin/activate
+   ```
+3. Run the Django development server:
+   ```bash
+   python manage.py runserver
+   ```
+The backend API is now running locally at: `http://127.0.0.1:8000/`.
+
+### 2. Start the React Frontend
+
+Open a **new terminal tab/window** and run everything relative to the project root:
+
+1. Navigate to the `frontend` directory:
+   ```bash
+   cd frontend
+   ```
+2. Make sure you have the required Node packages installed:
+   ```bash
+   npm install
+   ```
+3. Run the Vite development server:
+   ```bash
+   npm run dev
+   ```
+The frontend is now running at `http://localhost:5173/`. 
+_Navigate to this URL in your browser to interact with the application!_
+
+---
+
+## 💡 Quick Tips
+- To test the workflows, click **"Sign Up"** and create at least one `Patient` account and one `Therapist` account. 
+- A patient can log into the Patient Dashboard to take assessments, track moods, and browse/book sessions from the Therapist Directory.
+- A therapist can log into the Therapist Dashboard, instantiate their qualifications/availability, and accept incoming booking requests.
